@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import backend.urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path(r'^$', TemplateView.as_view(template_name="index.html")),
+    # path(r'^api/', include('backend.urls', namespace='api')),
+    url(r'^api/', include(backend.urls)),
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
 ]
