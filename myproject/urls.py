@@ -18,8 +18,6 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 import backend.urls
 
-import backend.urls
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'^api/', include(backend.urls)),
